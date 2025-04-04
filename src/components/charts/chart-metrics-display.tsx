@@ -1,7 +1,7 @@
 import React from 'react';
-import { FormData } from '../../types/form';
-import { MetricCard } from '../ui/metric-card';
-import { formatEuro } from '../../lib/financial';
+import { FormData } from '@/types/form';
+import { MetricCard } from '@/components/ui/metric-card';
+import { formatEuro } from '@/lib/utils/formatting';
 
 interface ChartMetricsDisplayProps {
   formData: FormData;
@@ -9,7 +9,7 @@ interface ChartMetricsDisplayProps {
 
 export function ChartMetricsDisplay({ formData }: ChartMetricsDisplayProps) {
   return (
-    <div className="flex flex-wrap gap-4 mb-4">
+    <div className="grid grid-cols-4 w-full gap-2">
       <MetricCard 
         label="CAC actuel" 
         value={formData.cac} 

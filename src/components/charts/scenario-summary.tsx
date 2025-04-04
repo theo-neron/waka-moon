@@ -1,6 +1,6 @@
 import React from 'react';
-import { DataPoint } from '../../types/chart';
-import { formatEuro } from '../../lib/financial';
+import { DataPoint } from '@/types/chart';
+import { formatEuro } from '@/lib/utils/formatting';
 
 interface ScenarioSummaryProps {
   title: string;

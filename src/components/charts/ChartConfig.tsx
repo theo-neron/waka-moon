@@ -1,4 +1,4 @@
-import { ChartConfig } from '../../types/chart-config';
+import { ChartConfig } from '@/types/chart-config';
 
 /**
  * Configuration des couleurs pour les graphiques

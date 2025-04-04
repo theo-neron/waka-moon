@@ -1,15 +1,20 @@
+'use client'
+
 import { useMemo } from 'react';
-import { FormData } from '../types/form';
-import { ChartSummary } from '../types/chart';
+import { FormData } from '@/types/form';
+import { ChartSummary } from '@/types/chart';
 import { 
   calculateFinancialData,
   getBreakevenPoint,
   calculateChartSummary
-} from '../lib/calculations/financialCalculations';
+} from '@/lib/calculations/financialCalculations';
 
 /**
- * Hook qui calcule et renvoie toutes les données financières nécessaires pour les graphiques
- * Utilise la mémorisation pour éviter des recalculs inutiles
+ * Hook personnalisé qui calcule et renvoie toutes les données financières 
+ * nécessaires pour les graphiques
+ * 
+ * Utilise la mémorisation pour éviter des recalculs inutiles lors des 
+ * re-rendus de composants
  * 
  * @param formData - Données du formulaire utilisateur
  * @returns Données financières, points de rentabilité et métriques
@@ -27,6 +32,7 @@ export function useFinancialData(formData: FormData) {
     lastQuarterData
   } = useMemo(() => calculateChartSummary(chartData), [chartData]);
 
+  // Renvoyer toutes les données calculées
   return {
     chartData,
     breakevenWithoutWakastart,

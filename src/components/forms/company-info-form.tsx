@@ -1,10 +1,10 @@
 import React from 'react';
 import { Building2 } from 'lucide-react';
-import { FormData } from '../../types/form';
-import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
-import { Label } from '../ui/label';
-import { Input } from '../ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
+import { FormData } from '@/types/form';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 interface CompanyInfoFormProps {
   data: Pick<FormData, 'companyName' | 'developmentStage' | 'sector' | 'targetMarket'>;

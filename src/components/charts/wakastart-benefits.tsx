@@ -1,5 +1,5 @@
 import React from 'react';
-import { formatEuro } from '../../lib/financial';
+import { formatEuro } from '@/lib/utils/formatting';
 
 interface WakastartBenefitsProps {
   financialBenefit: number;

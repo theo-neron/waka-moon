@@ -1,8 +1,8 @@
 import React from 'react';
 import { Mail } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
-import { Label } from '../ui/label';
-import { Input } from '../ui/input';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
 
 interface ContactFormProps {
   email: string;

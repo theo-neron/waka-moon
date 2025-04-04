@@ -1,8 +1,14 @@
-import { FormData } from "../../types/form";
-import { DataPoint } from "../../types/chart";
+/**
+ * Module de calculs financiers
+ * Contient les fonctions pour calculer les projections financières et métriques associées
+ */
+
+import { FormData } from "@/types/form";
+import { DataPoint } from "@/types/chart";
 
 /**
  * Constantes pour les calculs financiers
+ * Définit les améliorations apportées par l'utilisation de Wakastart
  */
 const WAKASTART_IMPROVEMENTS = {
   CAC_REDUCTION: 0.30,         // Réduction de 30% du CAC
@@ -45,11 +51,11 @@ export const calculateFinancialData = (formData: FormData): DataPoint[] => {
   
   // SANS WAKASTART - Revenus et coûts cumulatifs pré-calculés
   const cumulativeRevenueValues = [50000, 120000, 200000, 290000, 390000, 500000, 650000, 850000];
-  const cumulativeCostValues = [150000, 290000, 400000, 490000, 498000, 500000, 540000, 600000];
+  const cumulativeCostValues = [180000, 300000, 400000, 490000, 498000, 500000, 540000, 600000];
   
   // AVEC WAKASTART - Revenus et coûts cumulatifs pré-calculés (croisement au T4)
   const cumulativeRevenueWakaValues = [60000, 150000, 260000, 380000, 500000, 660000, 820000, 1000000];
-  const cumulativeCostWakaValues = [130000, 230000, 330000, 380000, 450000, 520000, 600000, 680000];
+  const cumulativeCostWakaValues = [110000, 200000, 290000, 350000, 420000, 490000, 560000, 630000];
   
   // Génération des données trimestrielles individuelles basées sur les différences entre valeurs cumulatives
   let prevRevenue = 0;

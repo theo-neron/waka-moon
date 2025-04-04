@@ -1,7 +1,9 @@
+'use client'
+
 import React from 'react';
-import { DataPoint } from '../../types/chart';
-import { formatEuro } from '../../lib/utils/formatting';
-import { CHART_COLORS, CHART_MARGINS, TOOLTIP_STYLE } from './ChartConfig';
+import { DataPoint } from '@/types/chart';
+import { formatEuro } from '@/lib/utils/formatting';
+import { CHART_COLORS, TOOLTIP_STYLE } from './ChartConfig';
 
 import {
   AreaChart,
@@ -14,6 +16,9 @@ import {
   ResponsiveContainer
 } from 'recharts';
 
+/**
+ * Props pour le composant AreaChartComponent
+ */
 interface AreaChartComponentProps {
   title: string;
   data: DataPoint[];
@@ -25,10 +30,13 @@ interface AreaChartComponentProps {
   costGradientId: string;
   revenueColor: string;
   costColor: string;
+  hideTitle?: boolean;
 }
 
 /**
  * Composant de graphique en aires pour visualiser revenus et coûts
+ * Affiche l'évolution des revenus et coûts sur une période donnée,
+ * avec indication du point de rentabilité
  */
 export function AreaChartComponent({
   title,
@@ -40,17 +48,26 @@ export function AreaChartComponent({
   revenueGradientId,
   costGradientId,
   revenueColor,
-  costColor
+  costColor,
+  hideTitle = false
 }: AreaChartComponentProps) {
   return (
     <div className="h-[350px] bg-slate-900/60 p-4 rounded-lg border border-slate-800 relative">
-      <div className={`absolute top-2 left-2 p-1.5 ${bgColor} rounded-lg z-10`}>
-        <span className="font-bold text-white text-sm">{title}</span>
-      </div>
+      {/* Titre en position absolue mais avec une meilleure visibilité */}
+      {!hideTitle && title && (
+        <div className={`absolute top-2 right-2 p-1.5 ${bgColor} rounded-lg z-10`}>
+          <span className="font-bold text-white text-sm">{title}</span>
+        </div>
+      )}
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart
           data={data}
-          margin={CHART_MARGINS.areaChart}
+          margin={{
+            top: 30,
+            right: 10,
+            left: 0,
+            bottom: 5,
+          }}
         >
           <CartesianGrid strokeDasharray="3 3" stroke={CHART_COLORS.referenceGrid} />
           <XAxis dataKey="name" stroke={CHART_COLORS.axis} />
@@ -103,11 +120,11 @@ export function AreaChartComponent({
               strokeWidth={2}
               label={{ 
                 value: 'Rentabilité', 
-                position: 'insideTopRight', 
+                position: 'top', 
                 fill: CHART_COLORS.breakeven, 
                 fontSize: 11,
                 fontWeight: 'bold',
-                offset: -10
+                offset: 10
               }} 
               strokeDasharray="3 3" 
             />

@@ -3,6 +3,7 @@ import { Rocket } from 'lucide-react';
 
 /**
  * En-tête du site avec logo et message d'accueil
+ * Apparaît en haut de la page principale et définit l'identité visuelle de l'application
  */
 export function SiteHeader() {
   return (
@@ -13,9 +14,7 @@ export function SiteHeader() {
           Wakamoon
         </h1>
       </div>
-      <p className="text-cyan-100 max-w-2xl mx-auto text-lg">
-        Obtenez une étude de marché personnalisée pour lancer votre business SAAS !
-      </p>
+      <p className="text-cyan-100 max-w-3xl mx-auto">Obtenez une étude de marché personnalisée pour lancer votre business SAAS !</p>
     </div>
   );
 }

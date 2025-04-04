@@ -1,6 +1,8 @@
+'use client'
+
 import React from 'react';
-import { DataPoint } from '../../types/chart';
-import { formatEuro } from '../../lib/utils/formatting';
+import { DataPoint } from '@/types/chart';
+import { formatEuro } from '@/lib/utils/formatting';
 import { CHART_COLORS, CHART_MARGINS, TOOLTIP_STYLE } from './ChartConfig';
 
 import {

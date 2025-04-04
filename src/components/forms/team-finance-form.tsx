@@ -1,9 +1,9 @@
 import React from 'react';
 import { Users } from 'lucide-react';
-import { FormData } from '../../types/form';
-import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
-import { Label } from '../ui/label';
-import { Input } from '../ui/input';
+import { FormData } from '@/types/form';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
 
 interface TeamFinanceFormProps {
   data: Pick<FormData, 'teamSize' | 'monthlyBudget' | 'capital'>;
